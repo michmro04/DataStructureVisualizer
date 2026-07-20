@@ -8,4 +8,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Renders\" />
+    <Folder Include="Structures\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
