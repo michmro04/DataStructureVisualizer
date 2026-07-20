@@ -1,0 +1,8 @@
+# Ignorujemy pliki tymczasowe i konfiguracyjne Visual Studio
+.vs/
+*.user
+*.suo
+
+# Ignorujemy skompilowane wersje aplikacji (muszą budować się na nowo z kodu)
+[Bb]in/
+[Oo]bj/
