@@ -6,7 +6,7 @@
         void AddElement(int element);
 
         // Generic name to unify Pop (Stack), Dequeue (Queue), and Delete (List)
-        int RemoveElement(int element);
+        int RemoveElement();
 
         // Provides the current sequence of elements for the UI to draw
         IEnumerable<int> GetElements();
