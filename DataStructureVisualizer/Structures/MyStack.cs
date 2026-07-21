@@ -8,12 +8,12 @@ namespace DataStructureVisualizer.Structures
         private class Node
         {
             public int Value { get; set;  }
-            public Node Next { get; set; }
+            public Node Below { get; set; }
 
             public Node(int value)
             {
                 Value = value;
-                Next = null;
+                Below = null;
             }
         }
 
@@ -21,29 +21,49 @@ namespace DataStructureVisualizer.Structures
         private Node _top;
         public MyStack()
         {
-            _top = null;
+            _top = null;    //empty stack
         }
 
 
         public void AddElement(int element)
         {
-            throw new NotImplementedException();
+            Node newNode = new Node(element);
+            newNode.Below = _top;               
+            _top = newNode;
+
         }
 
         public int RemoveElement()
         {
-            throw new NotImplementedException();
+            if(_top != null)
+            {
+                int elementValue = _top.Value;
+                _top = _top.Below;
+
+                return elementValue;
+            }
+            else
+            {
+                throw new Exception("Stack is empty!");
+            }
         }
 
         public IEnumerable<int> GetElements()
         {
-            throw new NotImplementedException();
+            Node current = _top;
+            while(current != null)
+            {
+                yield return current.Value;
+                current = current.Below;
+            }
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            if (_top != null)
+            {
+                _top = null;
+            }
         }
-
     }
 }
